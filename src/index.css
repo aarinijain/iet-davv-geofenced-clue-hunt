@@ -1,0 +1,278 @@
+@import "tailwindcss";
+
+/* Typography mappings */
+.font-heading {
+  font-family: 'Bricolage Grotesque', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+}
+
+.font-handwriting {
+  font-family: 'Caveat', cursive;
+}
+
+/* Squad Passport Animations */
+@keyframes stamp-slam {
+  0% {
+    transform: scale(3) rotate(-22deg);
+    opacity: 0;
+  }
+  60% {
+    transform: scale(0.92) rotate(4deg);
+    opacity: 0.95;
+  }
+  80% {
+    transform: scale(1.04) rotate(-3deg);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1) rotate(-4deg);
+    opacity: 1;
+  }
+}
+
+.animate-stamp-slam {
+  animation: stamp-slam 0.45s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+@keyframes envelope-shake {
+  0%, 100% {
+    transform: translateX(0) rotate(0deg);
+  }
+  15%, 55%, 85% {
+    transform: translateX(-10px) rotate(-1.5deg);
+  }
+  35%, 75% {
+    transform: translateX(10px) rotate(1.5deg);
+  }
+}
+
+.animate-envelope-shake {
+  animation: envelope-shake 0.45s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+}
+
+@keyframes polaroid-develop {
+  0% {
+    filter: brightness(0.25) contrast(0.4) saturate(0.2) blur(2px);
+    opacity: 0.7;
+  }
+  40% {
+    filter: brightness(0.65) contrast(0.7) saturate(0.6) blur(1px);
+    opacity: 0.9;
+  }
+  100% {
+    filter: brightness(1) contrast(1) saturate(1) blur(0px);
+    opacity: 1;
+  }
+}
+
+.animate-polaroid-develop {
+  animation: polaroid-develop 2.4s ease-out forwards;
+}
+
+@keyframes seal-pop {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.25) rotate(10deg);
+  }
+  100% {
+    transform: scale(0.85) rotate(-5deg);
+    opacity: 0.6;
+  }
+}
+
+.animate-seal-pop {
+  animation: seal-pop 0.35s ease-out forwards;
+}
+
+/* Perforated ticket stubs edges */
+.ticket-stub {
+  position: relative;
+  background-image: radial-gradient(circle at left, transparent 8px, #EEF0F7 8.5px),
+                    radial-gradient(circle at right, transparent 8px, #EEF0F7 8.5px);
+  background-size: 100% 100%;
+}
+
+/* Passport Desk Surface Background */
+.desk-surface {
+  background-color: #2B3FE0;
+  background-image: 
+    radial-gradient(circle at 50% 20%, rgba(255, 255, 255, 0.12) 0%, transparent 60%),
+    linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+  background-size: 100% 100%, 32px 32px, 32px 32px;
+}
+
+/* Binder paper styling */
+.passport-paper {
+  background-color: #EEF0F7;
+  background-image: linear-gradient(180deg, rgba(16, 26, 74, 0.02) 1px, transparent 1px);
+  background-size: 100% 28px;
+}
+
+/* Rubber Stamp Texture */
+.stamp-border {
+  border-style: solid;
+  mask-image: radial-gradient(circle, black 80%, rgba(0, 0, 0, 0.8) 100%);
+}
+
+/* Leaflet map styles */
+.leaflet-container {
+  width: 100%;
+  height: 100%;
+  background-color: #050811 !important;
+  font-family: inherit;
+  z-index: 10;
+}
+
+/* Custom dark tile styling */
+.dark-tiles .leaflet-tile {
+  filter: brightness(0.7) invert(1) contrast(2.8) hue-rotate(205deg) saturate(0.35);
+}
+
+/* Light tile styling for daytime visibility */
+.light-tiles .leaflet-tile {
+  filter: none !important;
+}
+
+.light-tiles.leaflet-container,
+.light-tiles .leaflet-container {
+  background-color: #E2E8F0 !important;
+}
+
+.light-tiles .leaflet-control-zoom a {
+  background-color: #FFFFFF !important;
+  color: #101A4A !important;
+  border-color: rgba(0, 0, 0, 0.15) !important;
+}
+
+.dark-tiles .leaflet-control-zoom a {
+  background-color: #101A4A !important;
+  color: #FFB627 !important;
+  border-color: rgba(255, 255, 255, 0.2) !important;
+}
+
+/* Dynamic evening/night filter for satellite imagery */
+.night-atmosphere .leaflet-tile {
+  filter: brightness(0.65) contrast(1.2) hue-rotate(200deg) saturate(1.15);
+}
+
+/* Animations for Geofence & Radar */
+@keyframes radar-pulse {
+  0% {
+    transform: scale(0.9);
+    opacity: 0.85;
+  }
+  50% {
+    transform: scale(1.35);
+    opacity: 0.35;
+  }
+  100% {
+    transform: scale(1.75);
+    opacity: 0;
+  }
+}
+
+.animate-radar-pulse {
+  animation: radar-pulse 2.2s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+
+@keyframes ping-slow {
+  0% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(2.2);
+    opacity: 0;
+  }
+}
+
+.animate-ping-slow {
+  animation: ping-slow 2.5s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+
+@keyframes neon-pulse {
+  0%, 100% {
+    filter: drop-shadow(0 0 6px rgba(56, 189, 248, 0.7));
+  }
+  50% {
+    filter: drop-shadow(0 0 14px rgba(56, 189, 248, 0.95));
+  }
+}
+
+.animate-neon-pulse {
+  animation: neon-pulse 2s ease-in-out infinite;
+}
+
+/* Student traffic animations */
+@keyframes particle-glow {
+  0%, 100% {
+    transform: scale(0.85);
+    opacity: 0.75;
+  }
+  50% {
+    transform: scale(1.25);
+    opacity: 1;
+  }
+}
+
+.animate-particle-glow {
+  animation: particle-glow 1.8s ease-in-out infinite;
+}
+
+.student-traffic-dot {
+  pointer-events: none;
+}
+
+/* Custom Leaflet DivIcons */
+.user-location-marker {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.campus-building-pin {
+  transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+  filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.5));
+}
+.campus-building-pin:hover {
+  transform: scale(1.18) translateY(-4px);
+  z-index: 1000 !important;
+}
+
+/* Leaflet Popup Styling */
+.leaflet-popup-content-wrapper {
+  background: rgba(15, 23, 42, 0.95) !important;
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(59, 130, 246, 0.3);
+  border-radius: 1rem !important;
+  color: #f1f5f9 !important;
+  padding: 0 !important;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.6) !important;
+}
+.leaflet-popup-content {
+  margin: 0 !important;
+  line-height: inherit !important;
+}
+.leaflet-popup-tip {
+  background: rgba(15, 23, 42, 0.95) !important;
+  border: 1px solid rgba(59, 130, 246, 0.3);
+}
+
+/* Scrollbar tweaks */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: rgba(15, 23, 42, 0.6);
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(71, 85, 105, 0.6);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(100, 116, 139, 0.8);
+}

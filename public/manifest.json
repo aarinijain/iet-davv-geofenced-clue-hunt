@@ -1,0 +1,20 @@
+{
+  "id": "/",
+  "name": "DAVV Campus Quest: Geofenced Clue Hunt",
+  "short_name": "CampusQuest",
+  "description": "Geofenced clue hunt adventure across DAVV Takshashila Campus Indore for GDG freshers orientation.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#090d16",
+  "theme_color": "#0f172a",
+  "icons": [
+    {
+      "src": "/compass-icon.svg",
+      "sizes": "192x192 512x512",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

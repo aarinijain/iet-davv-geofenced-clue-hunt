@@ -1,0 +1,6 @@
+{
+  "name": "DAVV Campus Quest: Geofenced Clue Hunt",
+  "description": "Location-based real-world clue hunt game for DAVV Takshashila campus with real-time Geolocation, geofenced checkpoints, interactive power-ups, live leaderboard, and organizer admin controls.",
+  "requestFramePermissions": ["geolocation", "camera"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
